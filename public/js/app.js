@@ -19308,6 +19308,20 @@ __webpack_require__.r(__webpack_exports__);
       render: function render() {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.h)(App, props);
       }
+    }) //set mixins
+    .mixin({
+      methods: {
+        //method "hasAnyPermission"
+        hasAnyPermission: function hasAnyPermission(permissions) {
+          //get permissions from props
+          var allPermissions = this.$page.props.auth.permissions;
+          var hasPermission = false;
+          permissions.forEach(function (item) {
+            if (allPermissions[item]) hasPermission = true;
+          });
+          return hasPermission;
+        }
+      }
     }).use(plugin).mount(el);
   }
 });
