@@ -1,0 +1,220 @@
+body {
+    /* background-color: #bccad8 !important; */
+    background-color: #e5e5e5 !important;
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+.shadow {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%)!important
+}
+
+.border-top-purple {
+    border-top: 5px solid #894b9d !important;
+}
+
+.btn-primary {
+    background-color: #894b9d !important;
+    border-color: #894b9d !important;
+}
+
+.btn-primary:hover {
+    background-color: #894b9d !important;
+    border-color: #894b9d !important;
+}
+
+.btn-primary:focus {
+    background-color: #894b9d !important;
+    border-color: #894b9d !important;
+}
+
+.text-primary {
+    color: #894b9d !important;
+}
+
+.c-sidebar .c-sidebar-nav-dropdown-toggle:hover,
+.c-sidebar .c-sidebar-nav-link:hover {
+    color: #fff;
+    background: hsla(0, 0%, 100%, .05);
+}
+
+.active {
+    background: hsla(0, 0%, 100%, .05) !important;
+}
+
+.rounded-3 {
+    border-radius: 0.5em !important;
+}
+
+/**
+* web
+*/
+.bg-green {
+    /* background-color: #43a047; */
+    background-color: #894b9d;
+}
+
+.bg-jumbotron {
+    background: #dfffe0;
+}
+
+.shadow {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%) !important
+}
+
+.card-hover:hover {
+    -webkit-box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+    box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+    transition: all .3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.rounded-3 {
+    border-radius: 0.5em !important;
+}
+
+.rounded-top {
+    border-top-left-radius: .5em !important;
+    border-top-right-radius: .5em !important;
+}
+
+.rounded-top-none {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-left-radius: .5em !important;
+    border-bottom-right-radius: .5em !important;
+}
+
+/* .height-auto {
+    height: 300px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+} */
+
+.img-carousel {
+    height: 200px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+}
+
+.title-book {
+    font-size: 15px;
+}
+
+.original-price {
+    font-size: 15px;
+    color: red;
+}
+
+.final-price {
+    font-size: 15px;
+    color: green;
+}
+
+.bg-gray {
+    background-color: #c3bfbf !important;
+}
+
+.text-green {
+    color: green !important;
+}
+
+.text-red {
+    color: red !important;
+}
+
+.btn-cart-red {
+    background-color: darkred!important;
+    color: white!important;
+}
+
+.btn-cart-green {
+    background-color: darkgreen!important;
+    color: white!important;
+}
+
+.text-darkorange {
+    color: darkorange !important;
+}
+
+.btn-cart {
+    position: fixed;
+    bottom: 100px;
+    border-radius: 50px;
+    z-index: 100;
+    right: 10%;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.btn-purple {
+    background-color: #894b9d !important;
+    color: white !important;
+}
+
+.carousel-custom {
+    z-index: 9;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    width: 37px;
+}
+
+#count-cart {
+    font-size: 12px;
+    background: #bf0b1c;
+    color: #fff;
+    vertical-align: top;
+    margin-left: -5px; 
+}
+
+#loading {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+  }
+
+body.modal-open .container {
+    -webkit-filter: blur(2.5px);
+    -moz-filter: blur(2.5px);
+    -o-filter: blur(2.5px);
+    -ms-filter: blur(2.5px);
+    filter: blur(2.5px);
+  }
+  
+  body.modal-open .carousel {
+    -webkit-filter: blur(2.5px);
+    -moz-filter: blur(2.5px);
+    -o-filter: blur(2.5px);
+    -ms-filter: blur(2.5px);
+    filter: blur(2.5px);
+  }
+  
+  body.modal-open footer {
+    -webkit-filter: blur(2.5px);
+    -moz-filter: blur(2.5px);
+    -o-filter: blur(2.5px);
+    -ms-filter: blur(2.5px);
+    filter: blur(2.5px);
+  }
+
+.border-top-info {
+    border-top: 5px solid #39f!important;
+}  
+
+.border-top-success {
+    border-top: 5px solid #2eb85c!important;
+}
+
+.border-top-danger {
+    border-top: 5px solid #e55353!important;
+}
+
+.border-top-warning {
+    border-top: 5px solid #f9b115!important;
+}
