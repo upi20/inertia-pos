@@ -63,5 +63,10 @@ class FortifyServiceProvider extends ServiceProvider
                 'request' => $request,
             ]);
         });
+
+        /**
+         * logout
+         */
+        $this->app->singleton(\Laravel\Fortify\Contracts\LogoutResponse::class, \App\Http\Responses\LogoutResponse::class);
     }
 }
