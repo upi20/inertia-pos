@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LabController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,6 @@ Route::prefix('apps')->group(function () {
 
         //route dashboard
         Route::get('dashboard', App\Http\Controllers\Apps\DashboardController::class)->name('apps.dashboard');
+        Route::post('arr', [LabController::class, 'arr'])->name('app.lab');
     });
 });
