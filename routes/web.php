@@ -27,6 +27,16 @@ Route::prefix('apps')->group(function () {
 
         //route dashboard
         Route::get('dashboard', App\Http\Controllers\Apps\DashboardController::class)->name('apps.dashboard');
+
+        //route permissions
+        Route::get('/permissions', \App\Http\Controllers\Apps\PermissionController::class)
+            ->name('apps.permissions.index')->middleware('permission:permissions.index');
+
+        // lab testing
         Route::post('arr', [LabController::class, 'arr'])->name('app.lab');
+
+        //route resource roles
+        Route::resource('/roles', \App\Http\Controllers\Apps\RoleController::class, ['as' => 'apps'])
+            ->middleware('permission:roles.index|roles.create|roles.edit|roles.delete');
     });
 });
