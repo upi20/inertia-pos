@@ -29,7 +29,7 @@
                   </span>
                 </div>
                 <input class="form-control" v-model="form.email" :class="{ 'is-invalid': errors.email }" type="email"
-                  placeholder="Email Address">
+                       placeholder="Email Address">
               </div>
               <div v-if="errors.email" class="alert alert-danger">
                 {{ errors.email }}
@@ -41,7 +41,7 @@
                   </span>
                 </div>
                 <input class="form-control" v-model="form.password" :class="{ 'is-invalid': errors.password }"
-                  type="password" placeholder="Password">
+                       type="password" placeholder="Password">
               </div>
               <div v-if="errors.password" class="alert alert-danger">
                 {{ errors.password }}
@@ -53,8 +53,8 @@
                   </span>
                 </div>
                 <input class="form-control" v-model="form.password_confirmation"
-                  :class="{ 'is-invalid': errors.password_confirmation }" type="password"
-                  placeholder="Password Confirmation">
+                       :class="{ 'is-invalid': errors.password_confirmation }" type="password"
+                       placeholder="Password Confirmation">
               </div>
               <div class="row">
                 <div class="col-12">

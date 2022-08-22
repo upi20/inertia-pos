@@ -1,4 +1,5 @@
 <template>
+
   <Head>
     <title>Users - Aplikasi Kasir</title>
   </Head>
@@ -15,18 +16,15 @@
                 <form @submit.prevent="handleSearch">
                   <div class="input-group mb-3">
                     <Link
-                      href="/apps/users/create"
-                      v-if="hasAnyPermission(['users.create'])"
-                      class="btn btn-primary input-group-text"
-                    >
-                      <i class="fa fa-plus-circle me-2"></i> NEW</Link
-                    >
+                          href="/apps/users/create"
+                          v-if="hasAnyPermission(['users.create'])"
+                          class="btn btn-primary input-group-text">
+                    <i class="fa fa-plus-circle me-2"></i> NEW</Link>
                     <input
-                      type="text"
-                      class="form-control"
-                      placeholder="search by role name..."
-                      v-model="search"
-                    />
+                           type="text"
+                           class="form-control"
+                           placeholder="search by role name..."
+                           v-model="search" />
 
                     <button class="btn btn-primary input-group-text" type="submit">
                       <i class="fa fa-search me-2"></i> SEARCH
@@ -36,8 +34,14 @@
                 <table class="table table-striped table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th scope="col">Full Name</th>
-                      <th scope="col">Email Address</th>
+                      <th
+                          scope="col"
+                          @click="handleOrder('name')"
+                          v-html="order.title('name', 'Full Name')"></th>
+                      <th
+                          scope="col"
+                          @click="handleOrder('email')"
+                          v-html="order.title('email', 'Email Address')"></th>
                       <th scope="col">Roles</th>
                       <th scope="col" style="width: 20%">Actions</th>
                     </tr>
@@ -48,35 +52,29 @@
                       <td>{{ user.email }}</td>
                       <td>
                         <span
-                          v-for="(role, index) in user.roles"
-                          :key="index"
-                          class="badge badge-primary shadow border-0 ms-2 mb-2"
-                        >
+                              v-for="(role, index) in user.roles"
+                              :key="index"
+                              class="badge badge-primary shadow border-0 ms-2 mb-2">
                           {{ role.name }}
                         </span>
                       </td>
                       <td class="text-center">
                         <Link
-                          :href="`/apps/users/${user.id}/edit`"
-                          v-if="hasAnyPermission(['users.edit'])"
-                          class="btn btn-success btn-sm me-2"
-                          ><i class="fa fa-pencil-alt me-1"></i> EDIT</Link
-                        >
+                              :href="`/apps/users/${user.id}/edit`"
+                              v-if="hasAnyPermission(['users.edit'])"
+                              class="btn btn-success btn-sm me-2"><i
+                           class="fa fa-pencil-alt me-1"></i> EDIT</Link>
                         <button
-                          @click.prevent="destroy(user.id)"
-                          v-if="hasAnyPermission(['users.delete'])"
-                          class="btn btn-danger btn-sm"
-                        >
+                                @click.prevent="destroy(user.id)"
+                                v-if="hasAnyPermission(['users.delete'])"
+                                class="btn btn-danger btn-sm">
                           <i class="fa fa-trash"></i> DELETE
                         </button>
                       </td>
                     </tr>
                   </tbody>
                 </table>
-                <Pagination
-                  :datas="{ search, order: order.r(), links: users.links }"
-                  align="end"
-                />
+                <Pagination :links="users.links" align="end" />
               </div>
             </div>
           </div>
@@ -92,6 +90,7 @@ import LayoutApp from "../../../Layouts/App.vue";
 
 //import component pagination
 import Pagination from "../../../Components/Pagination.vue";
+import OrderIcon from "../../../Components/OrderIcon.vue";
 
 //import Heade and Link from Inertia
 import { Head, Link } from "@inertiajs/inertia-vue3";
@@ -213,4 +212,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>
