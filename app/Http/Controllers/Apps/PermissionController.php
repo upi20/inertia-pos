@@ -22,12 +22,14 @@ class PermissionController extends Controller
         });
 
         // jika ada request sort dan validasi di dalam array
-        if ($request->sort && in_array($request->sort, ['name'])) {
+        if ($request->has(['dir', 'sort'])) {
             $dir = $request->dir == 'desc' ? 'desc' : 'asc';
-            $model->orderBy('name', $dir);
+            $name = $request->sort;
+            $model->orderBy($name, $dir);
         }
 
-        $permissions = $model->paginate(5);
+        $permissions = $model->paginate(5)
+            ->appends(request()->query());
 
         //return inertia view
         return inertia('Apps/Permissions/Index', [

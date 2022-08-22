@@ -24,7 +24,8 @@ class RoleController extends Controller
             $dir = request()->dir == 'desc' ? 'desc' : 'asc';
             $name = request()->sort;
             $model->orderBy($name, $dir);
-        })->with('permissions')->latest()->paginate(5);
+        })->with('permissions')->latest()->paginate(5)
+            ->appends(request()->query());
 
         //render with inertia
         return inertia('Apps/Roles/Index', [
