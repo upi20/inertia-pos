@@ -9,32 +9,15 @@ class TransactionDetail extends Model
 {
     use HasFactory;
 
-    /**
-     * fillable
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'transaction_id', 'product_id', 'qty', 'price'
-    ];
+    protected $fillable = ['transaction_id', 'product_id', 'qty', 'price'];
 
-    /**
-     * transaction
-     *
-     * @return void
-     */
     public function transaction()
     {
-        return $this->belongsTo(Transaction::class);
+        return $this->belongsTo(Transaction::class, 'transaction_id', 'id');
     }
 
-    /**
-     * product
-     *
-     * @return void
-     */
     public function product()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }

@@ -3,69 +3,36 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
     use HasFactory;
 
-    /**
-     * fillable
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'cashier_id', 'customer_id', 'invoice', 'cash', 'change', 'discount', 'grand_total'
-    ];
+    protected $fillable = ['cashier_id', 'customer_id', 'invoice', 'cash', 'change', 'discount', 'grand_total'];
 
-    /**
-     * details
-     *
-     * @return void
-     */
     public function details()
     {
-        return $this->hasMany(TransactionDetail::class);
+        return $this->hasMany(TransactionDetail::class, 'transaction_id', 'id');
     }
 
-    /**
-     * customer
-     *
-     * @return void
-     */
     public function customer()
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(Customer::class, 'customer_id', 'id');
     }
 
-    /**
-     * cashier
-     *
-     * @return void
-     */
     public function cashier()
     {
-        return $this->belongsTo(User::class, 'cashier_id');
+        return $this->belongsTo(User::class, 'cashier_id', 'id');
     }
 
-
-    /**
-     * profits
-     *
-     * @return void
-     */
     public function profits()
     {
-        return $this->hasMany(Profit::class);
+        return $this->hasMany(Profit::class, 'transaction_id', 'id');
     }
 
-    /**
-     * createdAt
-     *
-     * @return Attribute
-     */
     protected function createdAt(): Attribute
     {
         return Attribute::make(
