@@ -17,8 +17,8 @@ class RoleController extends Controller
     public function index()
     {
         //get roles
-        $roles = Role::when(request()->q, function ($roles) {
-            $roles = $roles->where('name', 'like', '%' . request()->q . '%');
+        $roles = Role::when(request()->q, function($roles) {
+            $roles = $roles->where('name', 'like', '%'. request()->q . '%');
         })->with('permissions')->latest()->paginate(5);
 
         //render with inertia

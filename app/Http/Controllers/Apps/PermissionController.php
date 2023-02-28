@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Apps;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Permission;
 
 class PermissionController extends Controller
@@ -16,12 +16,12 @@ class PermissionController extends Controller
      */
     public function __invoke(Request $request)
     {
-        // get permission 
-        $permissions = Permission::when($request->q, function ($permissions) use ($request) {
-            $permissions = $permissions->where('name', 'like', "%$request->q%");
+        //get permissions
+        $permissions = Permission::when(request()->q, function($permissions) {
+            $permissions = $permissions->where('name', 'like', '%'. request()->q . '%');
         })->latest()->paginate(5);
 
-        // return inertia view
+        //return inertia view
         return inertia('Apps/Permissions/Index', [
             'permissions' => $permissions
         ]);

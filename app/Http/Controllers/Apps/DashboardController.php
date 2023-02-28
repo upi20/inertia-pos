@@ -34,16 +34,16 @@ class DashboardController extends Controller
             ->groupBy('date')
             ->get();
 
-        if (count($chart_sales_week)) {
+        if(count($chart_sales_week)) {
             foreach ($chart_sales_week as $result) {
                 $sales_date[]    = $result->date;
                 $grand_total[]   = (int)$result->grand_total;
             }
-        } else {
+        }else {
             $sales_date[]   = "";
             $grand_total[]  = "";
         }
-
+        
 
         //count sales today
         $count_sales_today = Transaction::whereDay('created_at', $day)->count();
@@ -66,12 +66,12 @@ class DashboardController extends Controller
             ->limit(5)
             ->get();
 
-        if (count($chart_best_products)) {
+        if(count($chart_best_products)) {
             foreach ($chart_best_products as $data) {
                 $product[] = $data->title;
                 $total[]   = (int)$data->total;
             }
-        } else {
+        }else {
             $product[]   = "";
             $total[]  = "";
         }
